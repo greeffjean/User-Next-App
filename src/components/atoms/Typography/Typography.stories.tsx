@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { StoryObj } from '@storybook/react';
 
 import { HeadingOne, HeadingTwo, HeadingThree, HeadingFour, Body, BodySmall, BodyMedium, BodyOverline, BodyOverlineSmall } from './Typography';
 

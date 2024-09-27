@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build-storybook-styles": "npx tailwindcss -i ./src/app/globals.css -o ./.storybook/tailwind.css",
+    "build-storybook-styles": "MODE=dev npx tailwindcss -i ./src/app/globals.css -o ./.storybook/tailwind.css",
     "storybook": "yarn build-storybook-styles && storybook dev -p 6006",
     "build-storybook": "yarn build-storybook-styles && storybook build",
     "prepare": "husky"
