@@ -1,0 +1,13 @@
+.count {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 24px;
+}
+
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 14.06px;
+  text-transform: uppercase;
+  color: var(--TextSecondary, #5C6970);
+}

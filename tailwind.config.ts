@@ -27,6 +27,7 @@ const config: Config = {
       Turquoise700: "#1FADAD",
       TextPrimary: "#141C24",
       TextSecondary: "#5C6970",
+      TextLight: "#5C6970",
     },
   },
   fontFamily: {

@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   /* Custom Typography */
   .heading-1 {
@@ -66,26 +65,30 @@
 
 :root {
   /* Figma Colors */
-  --Primary: #4426D9;
-  --MajorelleBlue50: #ECE9FB;
-  --MajorelleBlue700: #361FAD;
-  --RedCrayola50: #FCE8EC;
-  --RedCrayola700: #B61634;
-  --LightBlue50: #E5F4FF;
-  --LightBlue700: #0077CC;
-  --MandarinOrange50: #FDEDE7;
-  --MandarinOrange700: #C03F0C;
-  --Turquoise50: #E9FBFB;
-  --Turquoise700: #1FADAD;
+  --Primary: #4426d9;
+  --MajorelleBlue50: #ece9fb;
+  --MajorelleBlue700: #361fad;
+  --RedCrayola50: #fce8ec;
+  --RedCrayola700: #b61634;
+  --LightBlue50: #e5f4ff;
+  --LightBlue700: #0077cc;
+  --MandarinOrange50: #fdede7;
+  --MandarinOrange700: #c03f0c;
+  --Turquoise50: #e9fbfb;
+  --Turquoise700: #1fadad;
 
-  --TextPrimary: #141C24;
-  --TextSecondary: #5C6970;
+  --TextPrimary: #141c24;
+  --TextSecondary: #5c6970;
+  --TextLight: #5c6970;
 
   /* Figma Gradients */
-  --PrimaryGradient: linear-gradient(102.78deg, #ECE9FB 0.31%, #FDEDE7 82.87%);
-  --PurpleGradient: linear-gradient(180deg, #FF0073 -85.89%, #811AB8 34.45%, #4426D9 100%);
-;
-
+  --PrimaryGradient: linear-gradient(102.78deg, #ece9fb 0.31%, #fdede7 82.87%);
+  --PurpleGradient: linear-gradient(
+    180deg,
+    #ff0073 -85.89%,
+    #811ab8 34.45%,
+    #4426d9 100%
+  );
 }
 
 @media (prefers-color-scheme: dark) {

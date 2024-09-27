@@ -28,6 +28,7 @@ export const Colors: Story = {
         <ColorBlock color="Turquoise700" />
         <ColorBlock color="TextPrimary" />
         <ColorBlock color="TextSecondary" />
+        <ColorBlock color="TextLight" />
     </section>
 }
 
