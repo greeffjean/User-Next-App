@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook-styles": "npx tailwindcss -i ./src/app/globals.css -o ./.storybook/tailwind.css",
+    "storybook": "yarn build-storybook-styles && storybook dev -p 6006",
+    "build-storybook": "yarn build-storybook-styles && storybook build",
     "prepare": "husky"
   },
   "dependencies": {

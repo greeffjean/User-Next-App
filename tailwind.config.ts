@@ -14,6 +14,9 @@ const config: Config = {
       },
     },
   },
+  fontFamily: {
+    sans: ["Roboto Flex", "sans-serif"],
+  },
   plugins: [],
 };
 export default config;
