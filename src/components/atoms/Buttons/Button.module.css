@@ -1,0 +1,46 @@
+.button {
+  border-radius: 100px;
+}
+
+.sm {
+  padding: 6px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 14.06px;
+  text-align: center;
+}
+.md {
+  padding: 8px 14px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 18.75px;
+  text-align: center;
+}
+.lg {
+  padding: 16px 24px;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 18.75px;
+  text-align: center;
+}
+
+.primary {
+  background: var(--Primary, #4426d9);
+  color: white;
+}
+.outline {
+  background: none;
+  border: 1px solid var(--Primary, #4426d9);
+  color: var(--Primary, #4426d9);
+  font-weight: 500 !important;
+}
+.gradient {
+  background: var(--PurpleGradient);
+  color: white;
+}
+.outlineFilled {
+  border: 1px solid var(--Primary, #4426d9);
+  background: var(--Primary50, #ece9fb);
+  color: var(--Primary, #4426d9);
+  font-weight: 500 !important;
+}
