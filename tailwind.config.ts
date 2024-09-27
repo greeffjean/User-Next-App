@@ -30,7 +30,7 @@ const config: Config = {
     },
   },
   fontFamily: {
-    sans: ["Roboto Flex", "sans-serif"],
+    roboto: ["Roboto Flex", "sans-serif"],
   },
   plugins: [],
 };

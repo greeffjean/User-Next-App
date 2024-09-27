@@ -1,0 +1,26 @@
+.pill {
+  padding: 12px 16px;
+  font-weight: 800;
+  border-radius: 24px;
+}
+
+.purple {
+  background: var(--MajorelleBlue50, #ece9fb);
+  color: var(--MajorelleBlue700, #361fad);
+}
+.red {
+  background: var(--RedCrayola50, #fce8ec);
+  color: var(--RedCrayola700, #b61634);
+}
+.blue {
+  background: var(--LightBlue50, #e5f4ff);
+  color: var(--LightBlue700, #0077cc);
+}
+.orange {
+  background: var(--MandarinOrange50, #fdede7);
+  color: var(--MandarinOrange700, #c03f0c);
+}
+.green {
+  background: var(--Turquoise50, #e9fbfb);
+  color: var(--Turquoise700, #1fadad);
+}

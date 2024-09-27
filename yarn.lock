@@ -4468,6 +4468,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"classnames@npm:^2.5.1":
+  version: 2.5.1
+  resolution: "classnames@npm:2.5.1"
+  checksum: afff4f77e62cea2d79c39962980bf316bacb0d7c49e13a21adaadb9221e1c6b9d3cdb829d8bb1b23c406f4e740507f37e1dcf506f7e3b7113d17c5bab787aa69
+  languageName: node
+  linkType: hard
+
 "clean-css@npm:^5.2.2":
   version: 5.3.3
   resolution: "clean-css@npm:5.3.3"
@@ -6212,6 +6219,26 @@ __metadata:
   version: 0.2.0
   resolution: "forwarded@npm:0.2.0"
   checksum: 9b67c3fac86acdbc9ae47ba1ddd5f2f81526fa4c8226863ede5600a3f7c7416ef451f6f1e240a3cc32d0fd79fcfe6beb08fd0da454f360032bde70bf80afbb33
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^11.8.0":
+  version: 11.8.0
+  resolution: "framer-motion@npm:11.8.0"
+  dependencies:
+    tslib: "npm:^2.4.0"
+  peerDependencies:
+    "@emotion/is-prop-valid": "*"
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  peerDependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: a9a9ea91d4a4b51a3230ff5a5e9b269c741ee07f22f5159cbcc778277499a0974ff345b3fbee6e421d2e5aa75bcaeb3e7650c105860b8c8be70812626cceab31
   languageName: node
   linkType: hard
 
@@ -10687,9 +10714,11 @@ __metadata:
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
+    classnames: "npm:^2.5.1"
     eslint: "npm:^8"
     eslint-config-next: "npm:14.2.13"
     eslint-plugin-storybook: "npm:^0.9.0"
+    framer-motion: "npm:^11.8.0"
     husky: "npm:^9.1.6"
     next: "npm:14.2.13"
     postcss: "npm:^8"
