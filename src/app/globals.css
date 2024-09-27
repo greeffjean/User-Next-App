@@ -2,9 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
+  /* Custom Typography */
+  .heading-1 {
+    font-family: Roboto Flex;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 30px;
+  }
+  .heading-2 {
+    font-family: Roboto Flex;
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 24px;
+  }
+  .heading-3 {
+    font-family: Roboto Flex;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 18px;
+    text-align: left;
+  }
+  .heading-4 {
+    font-family: Roboto Flex;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+  }
+
+  .body {
+    font-family: Roboto Flex;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+  }
+  .body-medium {
+    font-family: Roboto Flex;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.06px;
+  }
+  .body-small {
+    font-family: Roboto Flex;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.41px;
+  }
+  .body-overline {
+    font-family: Roboto Flex;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 18.75px;
+  }
+
+  .body-overline-small {
+    font-family: Roboto Flex;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.06px;
+  }
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Figma Colors */
+  --Primary: #4426D9;
+  --MajorelleBlue50: #ECE9FB;
+  --MajorelleBlue700: #361FAD;
+  --RedCrayola50: #FCE8EC;
+  --RedCrayola700: #B61634;
+  --LightBlue50: #E5F4FF;
+  --LightBlue700: #0077CC;
+  --MandarinOrange50: #FDEDE7;
+  --MandarinOrange700: #C03F0C;
+  --Turquoise50: #E9FBFB;
+  --Turquoise700: #1FADAD;
+
+  --TextPrimary: #141C24;
+  --TextSecondary: #5C6970;
+
+  /* Figma Gradients */
+  --PrimaryGradient: background: linear-gradient(102.78deg, #ECE9FB 0.31%, #FDEDE7 82.87%);
+  --PurpleGradient: background: linear-gradient(180deg, #FF0073 -114.9%, #811AB8 -51.51%, #4426D9 100%);
+
 }
 
 @media (prefers-color-scheme: dark) {
