@@ -18,10 +18,10 @@ const Pills: FC<TPills> = ({
     label,
     variant
 }) => {
-    return <span
+    return <div
         className={classNames(styles[variant], styles.pill, "roboto")}>
         {label}
-    </span>;
+    </div>;
 };
 
 export { Pills };

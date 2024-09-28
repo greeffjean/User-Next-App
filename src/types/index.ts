@@ -12,7 +12,8 @@ export enum COLORS {
   Turquoise700 = "Turquoise700",
   TextPrimary = "TextPrimary",
   TextSecondary = "TextSecondary",
-  TextLight = "TextLight"
+  TextLight = "TextLight",
+  ContentBorder = "ContentBorder",
 }
 
 export enum VARIANTS {

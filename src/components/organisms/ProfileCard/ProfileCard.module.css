@@ -1,0 +1,38 @@
+@value height: 64px;
+
+.wrapper:global::before {
+  content: "";
+  display: block;
+  height: calc(height + var(--cardPadding));
+  width: calc(100% + (var(--cardPadding) * 2));
+  transform: translateX(calc(var(--cardPadding) * -1)) translateY(calc(var(--cardPadding) * -1));
+  background: var(--PrimaryGradient);
+}
+
+.wrapper {
+  img {
+    margin-top: calc((height) * -1);
+    z-index: 2;
+    position: relative;
+
+    @media (max-width: 768px) {
+      margin-top: calc((height * 1.4) * -1);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+.ctaBar {
+  width: calc(100% + 20px);
+  transform: translateX(-10px);
+  border-top: 1px solid var(--Grey-Cold-50, #f1f3f4);
+}
+
+.content {
+  width: fit-content;
+  @media (max-width: 768px) {
+    margin: auto;
+    text-align: center;
+  }
+}
