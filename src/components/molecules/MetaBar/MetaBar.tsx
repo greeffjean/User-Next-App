@@ -14,7 +14,7 @@ const MetaBar: FC<TMetaBar> = ({ likes, shares, views, classes }) => {
         .filter((item) => Boolean(item.count));
 
     return (
-        <div className={classNames(classes, "flex gap-6")}>
+        <div className={classNames(classes, styles.wrapper, "flex gap-6")}>
             {filteredItems.map(({ count, id }) => {
                 return <div key={id} className={classNames(styles.meta, "flex gap-1")}>
                     <span className={styles[id]}></span>

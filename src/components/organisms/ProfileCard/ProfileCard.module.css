@@ -3,11 +3,13 @@
 .wrapper:global::before {
   content: "";
   display: block;
-  height: calc(height + var(--cardPadding));
+  height: calc(height);
   width: calc(100% + (var(--cardPadding) * 2));
   transform: translateX(calc(var(--cardPadding) * -1))
     translateY(calc(var(--cardPadding) * -1));
   background: var(--PrimaryGradient);
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
 }
 
 .wrapper {
@@ -15,6 +17,9 @@
     margin-top: calc((height) * -1);
     z-index: 2;
     position: relative;
+    border-radius: 100%;
+    border: 5px solid white;
+    box-shadow: 0px 2px 10px 0px #1a1a1a1a;
 
     @media (max-width: 768px) {
       margin-top: calc((height * 1.4) * -1);
@@ -25,9 +30,12 @@
 }
 
 .ctaBar {
-  width: calc(100% + 20px);
-  transform: translateX(-10px);
+  width: calc(100% + (var(--cardPadding) * 2));
+  transform: translateX(calc(var(--cardPadding) * -1));
   border-top: 1px solid var(--Grey-Cold-50, #f1f3f4);
+  padding-left: var(--cardPadding);
+  padding-right: var(--cardPadding);
+  box-sizing: border-box;
 }
 
 .content {

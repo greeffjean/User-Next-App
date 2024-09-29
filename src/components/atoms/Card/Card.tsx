@@ -1,14 +1,17 @@
 import classNames from "classnames";
 import styles from "./Card.module.css";
 
+type TPadding = "sm" | "md" | "lg";
+
 type TCard = {
     classes?: string;
+    padding?: TPadding;
 };
 
 
-const Card: FC<TCard> = ({ children, classes }) => {
+const Card: FC<TCard> = ({ children, classes, padding = "lg" }) => {
 
-    return <div className={classNames(classes, "rounded-xl p-2.5 relative", styles.wrapper)}>
+    return <div className={classNames(styles.wrapper, "rounded-xl relative md:overflow-hidden", classes, padding)}>
         {children}
     </div>
 }

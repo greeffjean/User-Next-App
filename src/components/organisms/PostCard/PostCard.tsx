@@ -1,7 +1,7 @@
 import { TPost, TUser } from "@/types";
 import classNames from "classnames";
 import { Card } from "@/components/atoms/Card/Card";
-import avatar from "@/components/assets/images/Avatar.png";
+import avatar from "@/components/assets/images/Avatar.svg";
 import styles from "./PostCard.module.css";
 import Image from "next/image";
 import { MetaBar } from "@/components/molecules/MetaBar/MetaBar";

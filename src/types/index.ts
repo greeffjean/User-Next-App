@@ -14,7 +14,8 @@ export enum COLORS {
   TextSecondary = "TextSecondary",
   TextLight = "TextLight",
   ContentBorder = "ContentBorder",
-  GreyCold50 = "GreyCold50"
+  GreyCold50 = "GreyCold50",
+  Slate15 = "Slate15",
 }
 
 export enum VARIANTS {

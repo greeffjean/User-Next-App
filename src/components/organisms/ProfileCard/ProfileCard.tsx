@@ -5,7 +5,7 @@ import styles from "./ProfileCard.module.css";
 import { Card } from "@/components/atoms/Card/Card";
 import { Button } from "@/components/atoms/Buttons/Buttons";
 import { SIZES, TUser, VARIANTS } from "@/types";
-import avatar from "@/components/assets/images/Avatar.png";
+import avatar from "@/components/assets/images/Avatar.svg";
 import classNames from "classnames";
 
 
@@ -23,7 +23,7 @@ const ProfileCard: FC<TProfileCard> = ({
 
     return (<Card classes="md:mt-0 mt-10">
         <div className={styles.wrapper}>
-            <div className={classNames("flex flex-col md:flex-row gap-3 md:pt-4", styles.content)}>
+            <div className={classNames("flex flex-col md:flex-row gap-3", styles.content)}>
                 <div>
                     <Image
                         width={120}
@@ -45,7 +45,7 @@ const ProfileCard: FC<TProfileCard> = ({
                     </div>
                 </div>
             </div>
-            <div className={classNames("flex gap-3 p-4 pb-2 justify-center md:justify-normal", styles.ctaBar)}>
+            <div className={classNames("flex gap-3 pt-3 justify-center md:justify-normal", styles.ctaBar)}>
                 <Button label="Follow" size={SIZES.sm} variant={VARIANTS.primary} />
                 <Button label="Message" size={SIZES.sm} variant={VARIANTS.outline} />
             </div>
