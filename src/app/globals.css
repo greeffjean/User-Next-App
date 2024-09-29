@@ -76,10 +76,14 @@
   --MandarinOrange700: #c03f0c;
   --Turquoise50: #e9fbfb;
   --Turquoise700: #1fadad;
+  --GreyCold50: #f1f3f4;
+
 
   --TextPrimary: #141c24;
   --TextSecondary: #5c6970;
   --TextLight: #5c6970;
+  --ContentBorder: #e4e7e8;
+  --Slate15: #DFDFDF;
 
   /* Figma Gradients */
   --PrimaryGradient: linear-gradient(102.78deg, #ece9fb 0.31%, #fdede7 82.87%);
@@ -89,19 +93,19 @@
     #811ab8 34.45%,
     #4426d9 100%
   );
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  
+  /* App specific guttering */
+  --cardPadding: 20px;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+  box-sizing: content-box;
 }
 
 @layer utilities {

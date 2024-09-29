@@ -1,3 +1,4 @@
+import { COLORS } from "@/types";
 import { StoryObj } from "@storybook/react";
 
 const ColorBlock: FC<{ color: string }> = ({ color }) => {
@@ -15,20 +16,7 @@ type Story = StoryObj<FC>;
 
 export const Colors: Story = {
     render: () => <section className="flex gap-5 flex-wrap">
-        <ColorBlock color="Primary" />
-        <ColorBlock color="MajorelleBlue50" />
-        <ColorBlock color="MajorelleBlue700" />
-        <ColorBlock color="RedCrayola50" />
-        <ColorBlock color="RedCrayola700" />
-        <ColorBlock color="LightBlue50" />
-        <ColorBlock color="LightBlue700" />
-        <ColorBlock color="MandarinOrange50" />
-        <ColorBlock color="MandarinOrange700" />
-        <ColorBlock color="Turquoise50" />
-        <ColorBlock color="Turquoise700" />
-        <ColorBlock color="TextPrimary" />
-        <ColorBlock color="TextSecondary" />
-        <ColorBlock color="TextLight" />
+        {Object.keys(COLORS).map(color => <ColorBlock key={color} color={color} />) }
     </section>
 }
 

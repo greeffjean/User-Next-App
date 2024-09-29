@@ -12,22 +12,45 @@ export enum COLORS {
   Turquoise700 = "Turquoise700",
   TextPrimary = "TextPrimary",
   TextSecondary = "TextSecondary",
-  TextLight = "TextLight"
+  TextLight = "TextLight",
+  ContentBorder = "ContentBorder",
+  GreyCold50 = "GreyCold50",
+  Slate15 = "Slate15",
 }
 
 export enum VARIANTS {
-    primary = "primary",
-    outline = "outline",
-    gradient = "gradient",
-    outlineFilled = "outlineFilled"
+  primary = "primary",
+  outline = "outline",
+  gradient = "gradient",
+  outlineFilled = "outlineFilled",
 }
 
 export enum SIZES {
-    sm = "sm",
-    md = "md",
-    lg = "lg"
+  sm = "sm",
+  md = "md",
+  lg = "lg",
 }
 
 export type TVariants = VARIANTS;
 
 export type TSizes = SIZES;
+
+export type TUser = {
+  username: string;
+  firstName: string;
+  lastName: string;
+  address: {
+    state: string;
+    country: string;
+  };
+  company: {
+    department: string;
+  };
+};
+
+export type TPost = {
+  body: string;
+  tags: Array<string>;
+  views: number;
+  reactions: { dislikes: number, likes: number };
+};

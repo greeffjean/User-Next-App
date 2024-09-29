@@ -28,6 +28,8 @@ const config: Config = {
       TextPrimary: "#141C24",
       TextSecondary: "#5C6970",
       TextLight: "#5C6970",
+      ContentBorder: "#e4e7e8",
+      Slate15: "#DFDFDF"
     },
   },
   fontFamily: {
