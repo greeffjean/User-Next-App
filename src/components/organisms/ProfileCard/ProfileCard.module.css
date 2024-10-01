@@ -12,8 +12,7 @@
   border-top-right-radius: 0.75rem;
 }
 
-.wrapper {
-  img {
+.img {
     margin-top: calc((height) * -1);
     z-index: 2;
     position: relative;
@@ -27,7 +26,6 @@
       margin-right: auto;
     }
   }
-}
 
 .ctaBar {
   width: calc(100% + (var(--cardPadding) * 2));

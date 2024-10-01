@@ -5,10 +5,10 @@ import { fetchUsers } from "@/services/users";
 export const revalidate = 3600;
 
 const Page = async () => {
-    const [ posts, userData ] = await Promise.all([fetchPosts({
-        limit: "0"
+    const [posts, userData] = await Promise.all([fetchPosts({
+        params: { limit: "0" }
     }), fetchUsers({
-        limit: "0"
+        params: { limit: "0" }
     })])
 
     return (

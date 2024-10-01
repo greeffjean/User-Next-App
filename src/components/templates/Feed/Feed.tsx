@@ -11,15 +11,15 @@ import { UserContextProvider } from "@/components/context/userContext";
 
 const WARNING = "The data you requested came back empty."
 
-const Feed = () => {
+const Feed: FC = () => {
     const { data: postsData } = useQuery<TPostsResponse>({
         queryKey: ['feedPosts'], queryFn: () => fetchPosts({
-            limit: "0"
+            params: { limit: "0" }
         })
     });
     const { data: userData } = useQuery<TUserResponse>({
         queryKey: ['users'], queryFn: () => fetchUsers({
-            limit: "0"
+            params: { limit: "0" }
         })
     });
 

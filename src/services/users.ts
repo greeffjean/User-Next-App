@@ -1,10 +1,12 @@
 import { TUserResponse } from "@/types/services";
 
 
-const fetchUsers = (params?: Record<string, string>): Promise<TUserResponse> => {
+type TFetchUsers = { params?: Record<string, string>, subPaths?: `/${string}` | "" };
+
+const fetchUsers = <T = TUserResponse>({params, subPaths = ""}: TFetchUsers): Promise<T> => {
   const queryParams = new URLSearchParams(params).toString();
-  return fetch("https://dummyjson.com/users?" + queryParams).then((res) =>
-    res.json()
+  return fetch(`https://dummyjson.com/users${subPaths}?${queryParams}`).then(
+    (res) => res.json()
   );
 };
 

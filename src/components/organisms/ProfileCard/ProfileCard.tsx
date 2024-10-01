@@ -27,6 +27,7 @@ const ProfileCard: FC<TProfileCard> = ({
             <div className={classNames("flex flex-col md:flex-row gap-3", styles.content)}>
                 <div>
                     <Image
+                        className={styles.image}
                         width={120}
                         height={120}
                         src={avatar}

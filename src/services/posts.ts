@@ -1,11 +1,13 @@
 import { TPostsResponse } from "@/types/services";
 
 
-const fetchPosts = (params?: Record<string, string>): Promise<TPostsResponse> => {
+type TFetchPosts = { params?: Record<string, string>; subPaths?: `/${string}` | "" };
+
+const fetchPosts = ({params, subPaths = ""}: TFetchPosts): Promise<TPostsResponse> => {
   const queryParams = new URLSearchParams(params).toString();
-  return fetch("https://dummyjson.com/posts?" + queryParams).then((res) =>
-    res.json()
-  );
+  return fetch(
+    `https://dummyjson.com/posts${subPaths}?${queryParams}`
+  ).then((res) => res.json());
 };
 
 export { fetchPosts };
