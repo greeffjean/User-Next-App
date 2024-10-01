@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ReactQueryClientProvider } from "@/services/components/Provider";
+import { TitleBar } from "@/components/organisms/TitleBar/TitleBar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ReactQueryClientProvider>
+          <TitleBar />
           {children}
         </ReactQueryClientProvider>
       </body>

@@ -7,6 +7,7 @@ import { MetaBar } from "@/components/molecules/MetaBar/MetaBar";
 import { useState } from "react";
 import { Render } from "@/components/utils/Render";
 import { TPost, TUser } from "@/types/services";
+import Link from "next/link";
 
 
 export type TPostCard = {
@@ -26,15 +27,19 @@ const PostCard: FC<TPostCard> = ({ user, post }) => {
         <Card>
             <div className="flex gap-4 pt-1 pb-4">
                 <div className={styles.avatar}>
-                    <Image
-                        width={40}
-                        height={40}
-                        src={avatar}
-                        alt="profile picture"
-                    />
+                    <Link href={`/profile/${user.id}`}>
+                        <Image
+                            width={40}
+                            height={40}
+                            src={avatar}
+                            alt="profile picture"
+                        />
+                    </Link>
                 </div>
                 <div>
-                    <h2 className="heading-2 text-base">{user.firstName} {user.lastName}</h2>
+                    <Link href={`/profile/${user.id}`}>
+                        <h2 className="heading-2 text-base">{user.firstName} {user.lastName}</h2>
+                    </Link>
                     <p className="body text-TextSecondary text-xs pb-3">{user.username}</p>
                     <div className="pb-2">
                         <span className={classNames(styles.body, "body-medium text-TextSecondary")}>{bodyText[0]}</span>
