@@ -12,6 +12,7 @@ type Story = StoryObj<TUserCardSmall>;
 export const Default: Story = {
     args: {
         user: {
+            id: "01",
             username: "@JeanCharl",
             firstName: "Jean",
             lastName: "Greeff",

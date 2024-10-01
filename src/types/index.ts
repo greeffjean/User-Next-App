@@ -34,23 +34,3 @@ export enum SIZES {
 export type TVariants = VARIANTS;
 
 export type TSizes = SIZES;
-
-export type TUser = {
-  username: string;
-  firstName: string;
-  lastName: string;
-  address: {
-    state: string;
-    country: string;
-  };
-  company: {
-    department: string;
-  };
-};
-
-export type TPost = {
-  body: string;
-  tags: Array<string>;
-  views: number;
-  reactions: { dislikes: number, likes: number };
-};

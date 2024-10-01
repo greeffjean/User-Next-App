@@ -12,6 +12,7 @@ type Story = StoryObj<TPostCard>;
 export const Default: Story = {
     args: {
         user: {
+            id: "01",
             username: "@JeanCharl",
             firstName: "Jean",
             lastName: "Greeff",
@@ -28,7 +29,10 @@ export const Default: Story = {
             Irure ut officia sit exercitation labore culpa consectetur consectetur ad proident qui dolor duis anim.Est pariatur deserunt dolore irure commodo nostrud exercitation ut ad mollit ullamco.Cupidatat mollit consequat mollit enim exercitation mollit cupidatat excepteur esse dolor.`,
             tags: ["adventure", "finance", "decentralized"],
             views: 40043,
-            reactions: { dislikes: 23, likes: 2045 }
+            reactions: { dislikes: 23, likes: 2045 },
+            id: "12",
+            title: "Non culpa mollit eiusmod adipisicing.",
+            userId: "01"
         }
     }
 }

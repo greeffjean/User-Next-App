@@ -1,8 +1,9 @@
 import { Card } from "@/components/atoms/Card/Card";
-import { SIZES, TUser, VARIANTS } from "@/types";
+import { SIZES, VARIANTS } from "@/types";
 import avatar from "@/components/assets/images/Avatar.svg";
 import Image from "next/image";
 import { Button } from "@/components/atoms/Buttons/Buttons";
+import { TUser } from "@/types/services";
 
 
 export type TUserCardSmall = {

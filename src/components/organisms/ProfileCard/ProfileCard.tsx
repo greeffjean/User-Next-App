@@ -4,9 +4,10 @@ import Image from "next/image";
 import styles from "./ProfileCard.module.css";
 import { Card } from "@/components/atoms/Card/Card";
 import { Button } from "@/components/atoms/Buttons/Buttons";
-import { SIZES, TUser, VARIANTS } from "@/types";
+import { SIZES, VARIANTS } from "@/types";
 import avatar from "@/components/assets/images/Avatar.svg";
 import classNames from "classnames";
+import { TUser } from "@/types/services";
 
 
 export type TProfileCard = {
@@ -26,6 +27,7 @@ const ProfileCard: FC<TProfileCard> = ({
             <div className={classNames("flex flex-col md:flex-row gap-3", styles.content)}>
                 <div>
                     <Image
+                        className={styles.image}
                         width={120}
                         height={120}
                         src={avatar}
