@@ -4,5 +4,15 @@
 }
 
 .backButton {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.backButton :global a {
     content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik0xOSAyMkwxMyAxNkwxOSAxMCIgc3Ryb2tlPSIjNzM4NDhDIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+}
+
+.backButton:global.display {
+    opacity: 1;
+    pointer-events: all;
 }

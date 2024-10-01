@@ -31,6 +31,11 @@ export enum SIZES {
   lg = "lg",
 }
 
+export enum ROUTES {
+  feed = "/",
+  profile = "/profile"
+}
+
 export type TVariants = VARIANTS;
 
 export type TSizes = SIZES;
