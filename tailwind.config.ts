@@ -1,16 +1,10 @@
 import type { Config } from "tailwindcss";
 
-const developmentContent =
-  process.env.MODE === "dev"
-    ? ["./src/stories/**/*.stories.{js,ts,jsx,tsx,mdx}"]
-    : [];
-
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-    ...developmentContent,
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
   ],
   theme: {
     colors: {

@@ -1,1 +1,3 @@
-yarn lint && yarn build && yarn build-storybook
+yarn lint
+yarn build
+yarn build-storybook

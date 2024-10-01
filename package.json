@@ -7,12 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "build-storybook-styles": "MODE=dev npx tailwindcss -i ./src/app/globals.css -o ./.storybook/tailwind.css",
-    "storybook": "yarn build-storybook-styles && storybook dev -p 6006",
-    "build-storybook": "yarn build-storybook-styles && storybook build",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "prepare": "husky"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.56.2",
     "classnames": "^2.5.1",
     "framer-motion": "^11.8.0",
     "next": "14.2.13",

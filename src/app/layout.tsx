@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { ReactQueryClientProvider } from "@/services/components/Provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        {children}
+        <ReactQueryClientProvider>
+          {children}
+        </ReactQueryClientProvider>
       </body>
     </html>
   );

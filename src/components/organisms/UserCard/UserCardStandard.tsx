@@ -1,6 +1,6 @@
 import { Card } from "@/components/atoms/Card/Card";
 import { Stats } from "@/components/molecules/Stats/Stats";
-import { TUser } from "@/types";
+import { TUser } from "@/types/services";
 import avatar from "@/components/assets/images/Avatar.svg";
 import Image from "next/image";
 import classNames from "classnames";

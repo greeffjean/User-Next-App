@@ -1,4 +1,3 @@
-import { TPost, TUser } from "@/types";
 import classNames from "classnames";
 import { Card } from "@/components/atoms/Card/Card";
 import avatar from "@/components/assets/images/Avatar.svg";
@@ -7,6 +6,7 @@ import Image from "next/image";
 import { MetaBar } from "@/components/molecules/MetaBar/MetaBar";
 import { useState } from "react";
 import { Render } from "@/components/utils/Render";
+import { TPost, TUser } from "@/types/services";
 
 
 export type TPostCard = {
