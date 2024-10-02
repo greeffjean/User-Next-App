@@ -1,8 +1,7 @@
 .wrapper {
   border: 1px solid var(--ContentBorder, #e4e7e8);
   box-shadow: 0px 1px 0px #1A1A1A14;
-  width: fit-content;
-  padding: var(--cardPadding, 20px);
+  padding: var(--cardPadding, 15px) calc(var(--cardPadding, 15px) + 5px);
 }
 
 .wrapper:global.md {

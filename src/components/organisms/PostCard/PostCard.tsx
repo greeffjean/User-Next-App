@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Render } from "@/components/utils/Render";
 import { TPost, TUser } from "@/types/services";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 
 export type TPostCard = {
@@ -26,7 +27,7 @@ const PostCard: FC<TPostCard> = ({ user, post }) => {
     return (
         <Card>
             <div className="flex gap-4 pt-1 pb-4">
-                <div className={styles.avatar}>
+                <motion.div whileHover={{ opacity: 0.5 }} className={styles.avatar}>
                     <Link href={`/profile/${user.id}`}>
                         <Image
                             width={40}
@@ -35,16 +36,16 @@ const PostCard: FC<TPostCard> = ({ user, post }) => {
                             alt="profile picture"
                         />
                     </Link>
-                </div>
+                </motion.div>
                 <div>
                     <Link href={`/profile/${user.id}`}>
-                        <h2 className="heading-2 text-base">{user.firstName} {user.lastName}</h2>
+                        <motion.h2 whileHover={{ textDecoration: "underline", textDecorationThickness: "2px" }} className="heading-2 text-base">{user.firstName} {user.lastName}</motion.h2>
                     </Link>
-                    <p className="body text-TextSecondary text-xs pb-3">{user.username}</p>
+                    <p className="body text-TextSecondary text-xs pb-3">@{user.username}</p>
                     <div className="pb-2">
-                        <span className={classNames(styles.body, "body-medium text-TextSecondary")}>{bodyText[0]}</span>
+                        <span className={classNames(styles.body, "body-medium text-sm text-TextSecondary")}>{bodyText[0]}</span>
                         <Render isTruthy={viewMore}>
-                            <span className={classNames(styles.body, "body-medium text-TextSecondary")}>{bodyText[1]}</span>
+                            <span className={classNames(styles.body, "body-medium text-sm text-TextSecondary")}>{bodyText[1]}</span>
                         </Render>
                         <Render isTruthy={viewMoreToggle}>
                             <Render isTruthy={!viewMore}>
@@ -52,7 +53,7 @@ const PostCard: FC<TPostCard> = ({ user, post }) => {
                             </Render>
                             <span
                                 onClick={() => setViewMore(!viewMore)}
-                                className="body-medium text-Primary cursor-pointer">{viewMore ? "  view less" : "view more"}</span>
+                                className="body-medium text-sm text-Primary cursor-pointer">{viewMore ? "  view less" : "view more"}</span>
                         </Render>
                     </div>
                     <div className="flex gap-3">

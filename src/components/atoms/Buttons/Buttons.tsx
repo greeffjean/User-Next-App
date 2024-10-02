@@ -10,13 +10,18 @@ export type TButton = {
     size: TSizes
 }
 
+const HoverClassess = {
+    [VARIANTS.primary]: "gradient",
+    [VARIANTS.outline]: "outlineFilled"
+};
+
 const Button: FC<TButton> = ({
     label,
     variant = VARIANTS.primary,
     size
 }) => {
     return <motion.button
-        className={classNames(styles[variant], styles[size], styles.button, "font-roboto")}>
+        className={classNames(styles[variant], styles[size], styles[HoverClassess[variant]], styles.button, "font-roboto")}>
         {label}
     </motion.button>;
 };

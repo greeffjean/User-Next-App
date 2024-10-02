@@ -57,27 +57,33 @@ export const FeedContent: FC<TFeedContent> = ({ userData, postsData }) => {
     const whoToFollow = Object.values(topPostingUsers).filter(entry => entry.length).sort((a, b) => a.length - b.length)
         .reverse().slice(0, 4).map((list) => userDict[list[0]]);
 
-    return (<section>
+    return (<>
         <Title title={"Feed"} />
         <div>
-            <h2>Suggested Posts</h2>
+            <h2 className="heading-2 mb-5">Suggested Posts</h2>
             <ComposedErrorBoundary>
-                {suggestedPosts.map(post => <PostCard key={post.id} user={userDict[post.userId]} post={post} />)}
+                <div className="grid gap-5 mb-6">
+                    {suggestedPosts.map(post => <PostCard key={post.id} user={userDict[post.userId]} post={post} />)}
+                </div>
             </ComposedErrorBoundary>
         </div>
         <div>
-            <h2>Who to follow</h2>
+            <h2 className="heading-2 mb-5">Who to follow</h2>
             <ComposedErrorBoundary>
-                {whoToFollow.map(user => <UserCardSmall key={user.id} user={user} />)}
+                <div className="grid gap-4 md:grid-cols-2 mb-6">
+                    {whoToFollow.map(user => <UserCardSmall key={user.id} user={user} />)}
+                </div>
             </ComposedErrorBoundary>
         </div>
         <UserContextProvider value={{ userDict }}>
-            <h2>Recent</h2>
-            <ComposedErrorBoundary>
-                <LoadRecentPosts posts={postsData.posts} totalPosts={postsData.total} />
-            </ComposedErrorBoundary>
+            <div>
+                <h2 className="heading-2 mb-5">Recent</h2>
+                <ComposedErrorBoundary>
+                    <LoadRecentPosts posts={postsData.posts} totalPosts={postsData.total} />
+                </ComposedErrorBoundary>
+            </div>
         </UserContextProvider>
-    </section>)
+    </>)
 }
 
 

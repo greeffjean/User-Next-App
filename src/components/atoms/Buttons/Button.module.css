@@ -1,6 +1,7 @@
 .button {
   border-radius: 100px;
   height: fit-content;
+  transition: all .4s ease;
 }
 
 .sm {
@@ -26,7 +27,12 @@
 }
 
 .primary {
-  background: var(--Primary, #4426d9);
+  background: linear-gradient(
+    180deg,
+   var(--Primary, #4426d9) -85.89%,
+    var(--Primary, #4426d9) 34.45%,
+   var(--Primary, #4426d9) 100%
+  );
   color: white;
 }
 .outline {
@@ -35,11 +41,11 @@
   color: var(--Primary, #4426d9);
   font-weight: 500 !important;
 }
-.gradient {
+.gradient:hover {
   background: var(--PurpleGradient);
   color: white;
 }
-.outlineFilled {
+.outlineFilled:hover {
   border: 1px solid var(--Primary, #4426d9);
   background: var(--Primary50, #ece9fb);
   color: var(--Primary, #4426d9);

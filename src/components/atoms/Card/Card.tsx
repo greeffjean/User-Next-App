@@ -11,7 +11,7 @@ type TCard = {
 
 const Card: FC<TCard> = ({ children, classes, padding = "lg" }) => {
 
-    return <div className={classNames(styles.wrapper, "rounded-xl relative md:overflow-hidden", classes, padding)}>
+    return <div className={classNames(styles.wrapper, "rounded-xl relative md:overflow-hidden bg-white", classes, padding)}>
         {children}
     </div>
 }

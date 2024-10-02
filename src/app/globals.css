@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,25..151,100..1000&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 @layer base {
   /* Custom Typography */
@@ -80,12 +79,12 @@
   --Turquoise700: #1fadad;
   --GreyCold50: #f1f3f4;
 
-
   --TextPrimary: #141c24;
   --TextSecondary: #5c6970;
   --TextLight: #5c6970;
   --ContentBorder: #e4e7e8;
-  --Slate15: #DFDFDF;
+  --Slate15: #dfdfdf;
+  --ContentBase: #f9fafa;
 
   /* Figma Gradients */
   --PrimaryGradient: linear-gradient(102.78deg, #ece9fb 0.31%, #fdede7 82.87%);
@@ -95,9 +94,9 @@
     #811ab8 34.45%,
     #4426d9 100%
   );
-  
+
   /* App specific guttering */
-  --cardPadding: 20px;
+  --cardPadding: 15px;
 }
 
 body {

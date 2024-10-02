@@ -1,5 +1,10 @@
 import { HydratedProfile } from "@/components/templates/Profile/HydratedProfile"
+import { Metadata } from "next/types";
 
+
+export const metadata: Metadata = {
+    title: 'Metaversal | Profile',
+}
 
 type TGenerateMetadata = {
     params: { id: string }
