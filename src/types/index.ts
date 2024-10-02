@@ -33,9 +33,18 @@ export enum SIZES {
 
 export enum ROUTES {
   feed = "/",
-  profile = "/profile"
+  profile = "/profile",
 }
 
 export type TVariants = VARIANTS;
 
 export type TSizes = SIZES;
+
+export const APP_FEEDBACK = {
+  default: {
+    error: "Whoops! There was an error here!",
+  },
+};
+
+export type TTitles = "" | "Feed" | "Profile";
+

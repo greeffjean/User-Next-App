@@ -1,11 +1,12 @@
 "use client"
-
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useContext } from "react";
 import styles from "./TitleBar.module.css";
 import classNames from "classnames";
 import { ROUTES } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MetaContext } from "@/components/context/metaContext";
+
 
 export type TTitleBar = {
     controls?: Array<ReactNode>;
@@ -15,12 +16,7 @@ const TitleBar: FC<TTitleBar> = ({ controls = [""] }) => {
     const Controls = () => controls
     const pathname = usePathname()
     const display = (pathname ?? "").includes(ROUTES.profile)
-    const [title, setTitle] = useState("")
-
-    useEffect(() => {
-        setTitle(document.title)
-    }, [pathname])
-
+    const { title } = useContext(MetaContext);
 
     return (
         <nav className={classNames("flex justify-between p-3", styles.wrapper)}>

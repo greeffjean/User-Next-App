@@ -4,7 +4,7 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}"
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     colors: {
@@ -23,11 +23,13 @@ const config: Config = {
       TextSecondary: "#5C6970",
       TextLight: "#5C6970",
       ContentBorder: "#e4e7e8",
-      Slate15: "#DFDFDF"
+      Slate15: "#DFDFDF",
     },
-  },
-  fontFamily: {
-    roboto: ["Roboto Flex", "sans-serif"],
+    extend: {
+      fontFamily: {
+        roboto: ['"Roboto Flex"', "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };

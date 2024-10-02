@@ -1,5 +1,7 @@
 import { Card } from "@/components/atoms/Card/Card";
 import styles from "./Error.module.css";
+import { APP_FEEDBACK } from "@/types";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
 
 export type TError = {
@@ -7,7 +9,7 @@ export type TError = {
     description: string;
 }
 
-const Error: FC<TError> = ({ title, description }) => {
+const ErrorComponent: FC<TError> = ({ title, description }) => {
     return (<Card classes="grid gap-5 justify-items-center">
         <div className={styles.icon} />
         <div className="grid gap-3">
@@ -17,4 +19,11 @@ const Error: FC<TError> = ({ title, description }) => {
     </Card>)
 }
 
-export { Error }
+export const ComposedErrorBoundary: FC = ({ children }) => {
+    return (<ErrorBoundary errorComponent={() => <ErrorComponent title="Error" description={APP_FEEDBACK.default.error} />}>
+        {children}
+    </ErrorBoundary>)
+
+}
+
+export { ErrorComponent }

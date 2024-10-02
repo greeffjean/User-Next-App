@@ -1,3 +1,4 @@
+"use client"
 import { TUser } from "@/types/services";
 import { createContext } from "react";
 
