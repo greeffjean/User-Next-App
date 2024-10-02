@@ -7,6 +7,8 @@ import { TPostsResponse, TUser, TUserResponse } from "@/types/services";
 import { useQuery } from "@tanstack/react-query";
 import { LoadRecentPosts } from "../LoadRecentPosts/LoadRecentPosts";
 import { UserContextProvider } from "@/components/context/userContext";
+import { ComposedErrorBoundary, ErrorComponent } from "@/components/organisms/Error/Error";
+import { Title } from "@/components/atoms/Title/Title";
 
 
 const WARNING = "The data you requested came back empty."
@@ -23,8 +25,8 @@ const Feed: FC = () => {
         })
     });
 
-    if (!postsData?.posts || !postsData?.posts.length) return WARNING;
-    if (!userData?.users || !userData?.users.length) return WARNING;
+    if (!postsData?.posts || !postsData?.posts.length) return <ErrorComponent description={WARNING} title="Error" />;
+    if (!userData?.users || !userData?.users.length) return <ErrorComponent description={WARNING} title="Error" />;
 
     return <FeedContent userData={userData} postsData={postsData} />
 }
@@ -51,22 +53,29 @@ export const FeedContent: FC<TFeedContent> = ({ userData, postsData }) => {
             topPostingUsers[item.userId] = [];
         }
     });
-
+    
     const whoToFollow = Object.values(topPostingUsers).filter(entry => entry.length).sort((a, b) => a.length - b.length)
         .reverse().slice(0, 4).map((list) => userDict[list[0]]);
 
     return (<section>
+        <Title title={"Feed"} />
         <div>
             <h2>Suggested Posts</h2>
-            {suggestedPosts.map(post => <PostCard key={post.id} user={userDict[post.userId]} post={post} />)}
+            <ComposedErrorBoundary>
+                {suggestedPosts.map(post => <PostCard key={post.id} user={userDict[post.userId]} post={post} />)}
+            </ComposedErrorBoundary>
         </div>
         <div>
             <h2>Who to follow</h2>
-            {whoToFollow.map(user => <UserCardSmall key={user.id} user={user} />)}
+            <ComposedErrorBoundary>
+                {whoToFollow.map(user => <UserCardSmall key={user.id} user={user} />)}
+            </ComposedErrorBoundary>
         </div>
         <UserContextProvider value={{ userDict }}>
             <h2>Recent</h2>
-            <LoadRecentPosts posts={postsData.posts} totalPosts={postsData.total} />
+            <ComposedErrorBoundary>
+                <LoadRecentPosts posts={postsData.posts} totalPosts={postsData.total} />
+            </ComposedErrorBoundary>
         </UserContextProvider>
     </section>)
 }

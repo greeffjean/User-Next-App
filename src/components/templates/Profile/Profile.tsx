@@ -7,6 +7,8 @@ import { THydratedProfile } from "./HydratedProfile";
 import { ProfileCard } from "@/components/organisms/ProfileCard/ProfileCard";
 import { LoadRecentPosts } from "../LoadRecentPosts/LoadRecentPosts";
 import { UserContextProvider } from "@/components/context/userContext";
+import { ComposedErrorBoundary } from "@/components/organisms/Error/Error";
+import { Title } from "@/components/atoms/Title/Title";
 
 
 type TProfile = THydratedProfile
@@ -44,11 +46,16 @@ export const ProfileContent: FC<TProfileContent> = ({ userData, postsData }) => 
     return (
         <UserContextProvider value={{ userDict: { [userData.id]: userData } }}>
             <section>
-                <ProfileCard user={userData} posts={postsData.posts.length} likes={likesTotal} />
-                <h2 className="heading-2">Recent</h2>
+                <Title title={"Profile"} />
+                <ComposedErrorBoundary>
+                    <ProfileCard user={userData} posts={postsData.posts.length} likes={likesTotal} />
+                    </ComposedErrorBoundary>
+                    <h2 className="heading-2">Recent</h2>
+                    <ComposedErrorBoundary>
                 <LoadRecentPosts
                     posts={postsData.posts}
-                    totalPosts={postsData.posts.length} />
+                        totalPosts={postsData.posts.length} />
+                </ComposedErrorBoundary>
             </section>
         </UserContextProvider>
        )

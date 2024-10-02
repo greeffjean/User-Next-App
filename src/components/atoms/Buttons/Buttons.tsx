@@ -16,7 +16,7 @@ const Button: FC<TButton> = ({
     size
 }) => {
     return <motion.button
-        className={classNames(styles[variant], styles[size], styles.button, "roboto")}>
+        className={classNames(styles[variant], styles[size], styles.button, "font-roboto")}>
         {label}
     </motion.button>;
 };
