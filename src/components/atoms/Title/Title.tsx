@@ -1,6 +1,6 @@
 import { MetaContext } from "@/components/context/metaContext";
 import { TTitles } from "@/types";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 type TTitle = {
     title: TTitles;
@@ -8,8 +8,8 @@ type TTitle = {
 
 const Title: FC<TTitle> = ({ title }) => {
     const { setTitle } = useContext(MetaContext);
-    setTitle(title)
-
+    useEffect(() => setTitle(title), [])
+  
     return null;
 }
 
