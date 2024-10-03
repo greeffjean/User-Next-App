@@ -8,7 +8,7 @@ import { useState } from "react";
 import { Render } from "@/components/utils/Render";
 import { TPost, TUser } from "@/types/services";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 export type TPostCard = {
@@ -16,13 +16,13 @@ export type TPostCard = {
     post: TPost;
 }
 
-const TEXT_HALF = 150;
+const TEXT_HALF = 200;
 
 const PostCard: FC<TPostCard> = ({ user, post }) => {
     const [viewMore, setViewMore] = useState(false);
 
     const viewMoreToggle = post.body.length > TEXT_HALF;
-    const bodyText = [post.body.slice(0, TEXT_HALF), post.body.slice(0, Infinity)];
+    const bodyText = [post.body.slice(0, TEXT_HALF), post.body.slice(TEXT_HALF, Infinity)];
 
     return (
         <Card>
@@ -44,13 +44,20 @@ const PostCard: FC<TPostCard> = ({ user, post }) => {
                     <p className="body text-TextSecondary text-xs pb-3">@{user.username}</p>
                     <div className="pb-2">
                         <span className={classNames(styles.body, "body-medium text-sm text-TextSecondary")}>{bodyText[0]}</span>
-                        <Render isTruthy={viewMore}>
-                            <span className={classNames(styles.body, "body-medium text-sm text-TextSecondary")}>{bodyText[1]}</span>
-                        </Render>
+                        <AnimatePresence>
+                            {viewMore && <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className={classNames(styles.body, "body-medium text-sm text-TextSecondary")}>{bodyText[1]}</motion.span>}
+                        </AnimatePresence>
                         <Render isTruthy={viewMoreToggle}>
-                            <Render isTruthy={!viewMore}>
-                                <span>  ...</span>
-                            </Render>
+                            <AnimatePresence>
+                                {!viewMore && <motion.span
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}>  ...</motion.span>}
+                            </AnimatePresence>
                             <span
                                 onClick={() => setViewMore(!viewMore)}
                                 className="body-medium text-sm text-Primary cursor-pointer">{viewMore ? "  view less" : "view more"}</span>
