@@ -4,6 +4,7 @@
 - Pre-commit hooks
 - Routes
 - Storybook
+- E2E testing
 
 ## Installation
 In order to get started you will need to 
@@ -55,5 +56,13 @@ This repository is integrated with git commit hooks, get confidence with every c
 This repository showcases a UI playground that houses its component library, to view the playground simply: 
 - In your terminal run `yarn storybook`
 - Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
+
+
+### Running E2E Tests
+Cypress will simulate a user navigating your application, this requires your Next.js server to be running. We recommend running your tests against your production code to more closely resemble how your application will behave.
+
+Run `yarn build` && `yarn start` to build your Next.js application, then run npm run `yarn cypress:open` in another terminal window to start Cypress and run your E2E testing suite. 
+
+Alternatively you can also run Cypress in headless mode by running `yarn cypress:test`
 
 
