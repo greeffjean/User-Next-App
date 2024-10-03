@@ -1,5 +1,6 @@
 .wrapper {
     border-bottom: 1px solid var(--Slate15, #DFDFDF);
+    background: white;
     box-shadow: 0px 1px 0px #1A1A1A14;
 }
 

@@ -26,20 +26,4 @@ export const Outline: Story = {
     }
 }
 
-export const OutlineFilled: Story = {
-    args: {
-        size: SIZES.lg,
-        variant: VARIANTS.outlineFilled,
-        label: "OutlineFilled"
-    }
-}
-
-export const Gradient: Story = {
-    args: {
-        size: SIZES.lg,
-        variant: VARIANTS.gradient,
-        label: "Gradient"
-    }
-}
-
 export default meta;

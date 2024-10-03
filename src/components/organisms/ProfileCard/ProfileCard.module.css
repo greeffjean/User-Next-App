@@ -1,18 +1,19 @@
 @value height: 64px;
+@value cardpaddingX: calc(var(--cardPadding, 15px) + 5px);
 
 .wrapper:global::before {
   content: "";
   display: block;
   height: calc(height);
-  width: calc(100% + (var(--cardPadding) * 2));
-  transform: translateX(calc(var(--cardPadding) * -1))
-    translateY(calc(var(--cardPadding) * -1));
+  width: calc(100% + (cardpaddingX * 2));
+  transform: translateX(calc(cardpaddingX * -1))
+    translateY(calc(cardpaddingX * -1));
   background: var(--PrimaryGradient);
   border-top-left-radius: 0.75rem;
   border-top-right-radius: 0.75rem;
 }
 
-.img {
+.image {
     margin-top: calc((height) * -1);
     z-index: 2;
     position: relative;
@@ -28,11 +29,11 @@
   }
 
 .ctaBar {
-  width: calc(100% + (var(--cardPadding) * 2));
-  transform: translateX(calc(var(--cardPadding) * -1));
+  width: calc(100% + (cardpaddingX * 2));
+  transform: translateX(calc(cardpaddingX * -1));
   border-top: 1px solid var(--Grey-Cold-50, #f1f3f4);
-  padding-left: var(--cardPadding);
-  padding-right: var(--cardPadding);
+  padding-left: cardpaddingX;
+  padding-right: cardpaddingX;
   box-sizing: border-box;
 }
 

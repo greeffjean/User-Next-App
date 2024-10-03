@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Render } from "@/components/utils/Render";
 import { TPost, TUser } from "@/types/services";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 
 
 export type TPostCard = {
@@ -15,18 +16,18 @@ export type TPostCard = {
     post: TPost;
 }
 
-const TEXT_HALF = 150;
+const TEXT_HALF = 200;
 
 const PostCard: FC<TPostCard> = ({ user, post }) => {
     const [viewMore, setViewMore] = useState(false);
 
     const viewMoreToggle = post.body.length > TEXT_HALF;
-    const bodyText = [post.body.slice(0, TEXT_HALF), post.body.slice(0, Infinity)];
+    const bodyText = [post.body.slice(0, TEXT_HALF), post.body.slice(TEXT_HALF, Infinity)];
 
     return (
         <Card>
             <div className="flex gap-4 pt-1 pb-4">
-                <div className={styles.avatar}>
+                <motion.div whileHover={{ opacity: 0.5 }} className={styles.avatar}>
                     <Link href={`/profile/${user.id}`}>
                         <Image
                             width={40}
@@ -35,24 +36,31 @@ const PostCard: FC<TPostCard> = ({ user, post }) => {
                             alt="profile picture"
                         />
                     </Link>
-                </div>
+                </motion.div>
                 <div>
                     <Link href={`/profile/${user.id}`}>
-                        <h2 className="heading-2 text-base">{user.firstName} {user.lastName}</h2>
+                        <motion.h2 whileHover={{ textDecoration: "underline", textDecorationThickness: "2px" }} className="heading-2 text-base">{user.firstName} {user.lastName}</motion.h2>
                     </Link>
-                    <p className="body text-TextSecondary text-xs pb-3">{user.username}</p>
+                    <p className="body text-TextSecondary text-xs pb-3">@{user.username}</p>
                     <div className="pb-2">
-                        <span className={classNames(styles.body, "body-medium text-TextSecondary")}>{bodyText[0]}</span>
-                        <Render isTruthy={viewMore}>
-                            <span className={classNames(styles.body, "body-medium text-TextSecondary")}>{bodyText[1]}</span>
-                        </Render>
+                        <span className={classNames(styles.body, "body-medium text-sm text-TextSecondary")}>{bodyText[0]}</span>
+                        <AnimatePresence>
+                            {viewMore && <motion.span
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                className={classNames(styles.body, "body-medium text-sm text-TextSecondary")}>{bodyText[1]}</motion.span>}
+                        </AnimatePresence>
                         <Render isTruthy={viewMoreToggle}>
-                            <Render isTruthy={!viewMore}>
-                                <span>  ...</span>
-                            </Render>
+                            <AnimatePresence>
+                                {!viewMore && <motion.span
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}>  ...</motion.span>}
+                            </AnimatePresence>
                             <span
                                 onClick={() => setViewMore(!viewMore)}
-                                className="body-medium text-Primary cursor-pointer">{viewMore ? "  view less" : "view more"}</span>
+                                className="body-medium text-sm text-Primary cursor-pointer">{viewMore ? "  view less" : "view more"}</span>
                         </Render>
                     </div>
                     <div className="flex gap-3">

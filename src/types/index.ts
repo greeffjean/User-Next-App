@@ -16,13 +16,12 @@ export enum COLORS {
   ContentBorder = "ContentBorder",
   GreyCold50 = "GreyCold50",
   Slate15 = "Slate15",
+  ContentBase = "ContentBase",
 }
 
 export enum VARIANTS {
   primary = "primary",
   outline = "outline",
-  gradient = "gradient",
-  outlineFilled = "outlineFilled",
 }
 
 export enum SIZES {

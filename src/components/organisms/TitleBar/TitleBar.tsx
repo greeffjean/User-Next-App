@@ -19,13 +19,13 @@ const TitleBar: FC<TTitleBar> = ({ controls = [""] }) => {
     const { title } = useContext(MetaContext);
 
     return (
-        <nav className={classNames("flex justify-between p-3", styles.wrapper)}>
+        <nav className={classNames("flex justify-between items-center p-3", styles.wrapper)}>
             <div className={classNames(styles.backButton, { display })} >
                 <Link href={ROUTES.feed}>
                 </Link>
             </div>
-            <h3 className="heading-1">{title}</h3>
-            <div>
+            <h3 className="heading-1 text-lg">{title}</h3>
+            <div className="min-w-8">
                 <Controls />
             </div>
         </nav>

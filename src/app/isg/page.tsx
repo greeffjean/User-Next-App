@@ -3,10 +3,10 @@ import { fetchPosts } from "@/services/posts";
 import { fetchUsers } from "@/services/users";
 import { Metadata } from "next/types";
 
-export const revalidate = 3600;
+export const revalidate = 3600
 export const metadata: Metadata = {
-    title: 'Feed',
-};
+    title: 'Metaversal | Feed',
+}
 
 const Page = async () => {
     const [posts, userData] = await Promise.all([fetchPosts({
@@ -20,6 +20,6 @@ const Page = async () => {
             <FeedContent userData={userData} postsData={posts} />
         </main>
     )
-};
+}
 
-export default Page;
+export default Page

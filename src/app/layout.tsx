@@ -1,13 +1,9 @@
 import "./globals.css";
 import { ReactQueryClientProvider } from "@/services/components/Provider";
 import { TitleBar } from "@/components/organisms/TitleBar/TitleBar";
-import { Metadata } from "next";
 import { MetaContextProvider } from "@/components/context/metaContext";
+import { Container } from "@/components/atoms/Container/Container";
 
-
-export const metadata: Metadata = {
-  title: 'Metaversal',
-};
 
 export default function RootLayout({
   children,
@@ -16,11 +12,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="bg-ContentBase">
         <ReactQueryClientProvider>
           <MetaContextProvider>
             <TitleBar />
-            {children}
+            <Container>
+              {children}
+            </Container>
           </MetaContextProvider>
         </ReactQueryClientProvider>
       </body>

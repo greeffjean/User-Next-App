@@ -22,7 +22,7 @@ const LoadRecentPosts: FC<LoadRecentPosts> = ({ posts, totalPosts }) => {
         if (isVisible && lastChunk) setChunks([...chunks, [lastChunk[1], lastChunk[1] + 5]])
     }, [isVisible])
 
-    return <section>
+    return <section className="grid gap-5">
         {chunks.map(chunk => {
             const postCollection = posts.slice(chunk[0], chunk[1])
             return <PostSegment segmentId={chunk[1]} key={chunk[1]} posts={postCollection} />
