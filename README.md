@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Table of contents
+- Installation
+- Scripts
+- Pre-commit hooks
+- Routes
+- Storybook
 
-## Getting Started
+## Installation
+In order to get started you will need to 
+- Download [Node.js 18+.](https://nodejs.org/en/download/package-manager)
+- Enable corepack in your terminal `corepack enable`
+- Once in the root directory of the repository, run `yarn` to install dependencies
+- PS If you get stuck please follow these [guidelines](https://yarnpkg.com/getting-started/install) 
 
-First, run the development server:
+## Scripts
+- #### Run the development server
+    - Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+    - `yarn dev`
+- #### Create a production build
+    - `yarn build`
+- #### Run the production build locally
+    - Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+    - `yarn start`
+- #### Run storybook locally
+    - Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
+    - `yarn storybook`
+- #### Scan source-code for linting errors or warnings
+    - `yarn lint`
+- #### Create a production storybook build
+    - `yarn build-storybook`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Pre-commit hooks
+This repository is integrated with git commit hooks, get confidence with every commit, commits are subject due to the following process running to completion
+- `yarn lint`
+- `yarn build`
+- `yarn build-storybook`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> PS If you would like to augment this process please see configuration file `.husky/pre-commit`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Routes
+#### "/" (SSR)
+- Representing the feed page, configured to pre-render and pre-fetch data on the server on demand by means of `"@tanstack/react-query"`.
+- After hydration on the client is complete queries are cached and revalidated at set stale-times
+#### "/profile/[id]"
+- Representing the profile page, configured to pre-render and pre-fetch data on the server on demand by means of `"@tanstack/react-query"`.
+- After hydration on the client is complete queries are cached and revalidated at set stale-times
+#### "/isg"  (ISG)
+- Representing the feed page, configured to statically render at build time.
+- After a set timestamp has expired on the server the page will re-fetch fresh data and re-render itself on the server, thanks the Next Incremental Static Generation feature
+- PS ISR re-renders are request driven
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Storybook
+This repository showcases a UI playground that houses its component library, to view the playground simply: 
+- In your terminal run `yarn storybook`
+- Open [http://localhost:6006](http://localhost:6006) with your browser to see the result.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
