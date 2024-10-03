@@ -59,7 +59,7 @@ export const FeedContent: FC<TFeedContent> = ({ userData, postsData }) => {
 
     return (<>
         <Title title={"Feed"} />
-        <div>
+        <div className="suggested-posts">
             <h2 className="heading-2 mb-5">Suggested Posts</h2>
             <ComposedErrorBoundary>
                 <div className="grid gap-5 mb-6">
@@ -67,7 +67,7 @@ export const FeedContent: FC<TFeedContent> = ({ userData, postsData }) => {
                 </div>
             </ComposedErrorBoundary>
         </div>
-        <div>
+        <div className="follow">
             <h2 className="heading-2 mb-5">Who to follow</h2>
             <ComposedErrorBoundary>
                 <div className="grid gap-4 md:grid-cols-2 mb-6">
@@ -76,7 +76,7 @@ export const FeedContent: FC<TFeedContent> = ({ userData, postsData }) => {
             </ComposedErrorBoundary>
         </div>
         <UserContextProvider value={{ userDict }}>
-            <div>
+            <div className="recent-posts">
                 <h2 className="heading-2 mb-5">Recent</h2>
                 <ComposedErrorBoundary>
                     <LoadRecentPosts posts={postsData.posts} totalPosts={postsData.total} />

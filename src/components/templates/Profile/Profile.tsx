@@ -48,7 +48,9 @@ export const ProfileContent: FC<TProfileContent> = ({ userData, postsData }) => 
             <section className="grid gap-12">
                 <Title title={"Profile"} />
                 <ComposedErrorBoundary>
-                    <ProfileCard user={userData} posts={postsData.posts.length} likes={likesTotal} />
+                    <div className="profile-card">
+                        <ProfileCard user={userData} posts={postsData.posts.length} likes={likesTotal} />
+                    </div>
                 </ComposedErrorBoundary>
                 <div>
                     <h2 className="heading-2 mb-5">Recent</h2>

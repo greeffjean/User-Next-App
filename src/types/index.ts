@@ -46,4 +46,3 @@ export const APP_FEEDBACK = {
 };
 
 export type TTitles = "" | "Feed" | "Profile";
-
